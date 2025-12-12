@@ -1,8 +1,10 @@
 def f(arr):
-    a, b = set(arr)
+    x = 0
+    
+    for nr in arr:
+        if arr[x] == arr[x+1]:
+            nr += 1
+        elif arr[x] != arr[x+1]:
+            return arr[x+1]
 
-    return a if arr.count(a) == 1 else b
-
-if __name__ == "__main__":
-    print(f([7, 7, 7, 7, 7, 5, 7, 7]))  
-    print(f([1, 1, 2]))
+f([7,7,7,7,7,5,7,7])
