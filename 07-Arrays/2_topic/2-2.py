@@ -6,6 +6,6 @@ tic_tac_toe_board = [
 ]
 
 for row in tic_tac_toe_board:
-   for check in row:
-      print(tic_tac_toe_board[check], end=" ")
+   for elem in row:
+      print(elem, end=" ")
    print()
