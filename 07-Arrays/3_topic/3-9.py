@@ -3,7 +3,7 @@ def compare(array1, array2):
         for i in range(len(array1)):
             if array1[i] != array2[i]:
                 return False
-        
+            
         return True
     return False
     
