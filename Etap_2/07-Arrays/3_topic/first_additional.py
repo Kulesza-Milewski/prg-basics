@@ -1,4 +1,4 @@
-import random
+"""import random
 
 arr1 = [3,7,1,0,4]
 arr2 = [[2,3],[7,1],[0,4]]
@@ -22,4 +22,4 @@ arr13 = [random.choice([0, 1]) for i in range(20)]
 arr14 = [[random.choice([False, True]) for i in range(2)] for j in range(5)]
 
 
-print(arr14)
+print(arr14)"""
