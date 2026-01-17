@@ -1,0 +1,18 @@
+class C:
+    def __init__(self, value):
+        self.value = value
+        
+    def m1(self):
+        return self.value
+        
+    def m2(self):
+        self.value += 1
+        
+    def m3(self):
+        self.value -= 1
+        
+    def m4(self, n):
+        self.value += n
+        
+    def __str__(self):
+        return str(self.value)
