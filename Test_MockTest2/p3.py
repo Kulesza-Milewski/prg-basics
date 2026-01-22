@@ -1,18 +1,15 @@
 def f(array2D):
-    n = 0
-
-    while n < len(array2D):
-        row = sum(array2D[n])
-        col = array2D[0][n] + array2D[1][n] + array2D[2][n]
-
-        if row != col:
+    rows = len(array2D)
+    cols = len(array2D[0])
+    
+    for i in range(rows):
+        row_sum = sum(array2D[i])
+        col_sum = sum(row[i] for row in array2D)
+        
+        if row_sum != col_sum:
             return False
-        else:
-            n += 1
-            continue
-
+            
     return True
 
+print(f([[3,7,2],[4,2,5],[5,2,1]]))
 print(f([[3,7,2],[4,2,5],[9,2,1]]))
-
-#Dobrze

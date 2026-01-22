@@ -1,20 +1,15 @@
 def f(subjects):
-    naj_srednia = 0
-    przedmiot_koniec = ""
+    best_avg = 0
+    best_subject = ""
     
-    for przedmiot, oceny in subjects.items():
-        srednia = sum(oceny) / len(oceny)
+    for subject, grades in subjects.items():
+        if len(grades) > 0:
+            avg = sum(grades) / len(grades)
+            if avg > best_avg:
+                best_avg = avg
+                best_subject = subject
+                
+    return best_subject
 
-        if srednia > naj_srednia:
-            naj_srednia = srednia
-            przedmiot_koniec = przedmiot
-    return przedmiot_koniec
-    
+
 print(f({"math":[3,4,4],"geo":[5,4,4,4],"comp":[5,4]}))
-
-#Błędy
-
-"""
-Brak wiedzy o .items() i możliwości przechowywania wiedzy w pętli for
-
-"""

@@ -1,36 +1,26 @@
 def f(player1, player2):
-    high = ['A', 'K', 'Q', 'J', 'T']
-    n1 = 0
-    n2 = 0
-    player1_value = 0
-    player2_value = 0
 
-    while n1 < len(player1):
-        if player1[n1] in high:
-            player1_value += 10
-        else:
-            player1_value += int(player1[n1])
-        n1 += 1
-
-    while n2 < len(player2):
-        if player2[n2] in high:
-            player2_value += 10
-        else:
-            player2_value += int(player2[n2])
-        n2 += 1
-
-    if player1_value >= player2_value:
-        return True, player1_value, player2_value
-    else:
-        return False, player1_value, player2_value
+    def calculate_points(hand):
+        total = 0
+        for card in hand:
+            if card in "AKQJT":
+                total += 10 
+            else:
+                total += int(card)
+        return total
     
+    sum1 = calculate_points(player1)
+    sum2 = calculate_points(player2)
+    
+    return sum1 >= sum2
 
-print(f("9532","K8"))
-
-#Błędy
+print(f("AJ972", "AQT72"))
+print(f("9532", "K8"))
 
 """
-Miałem jedną wartość n, nic jej nie resetowało, 
-musiałem zmienić ją na dwie wartości n1, n2
+Gdy mamy do obliczenia dwa wyniki w jednej funkcji to opłaca się
+zdefiniować funkcję liczącą o dowolnej nazwie, aby użyć wartości
+wystarczy dodać wartości jak tu czyli zdefiniować atrybut sum1 i sum2
+i porównać je do napisanej funkcji
 
 """
