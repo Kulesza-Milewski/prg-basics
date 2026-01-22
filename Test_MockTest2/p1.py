@@ -1,26 +1,11 @@
 def f(player1, player2):
-
-    def calculate_points(hand):
-        total = 0
-        for card in hand:
-            if card in "AKQJT":
-                total += 10 
+    def policz_punkty(reka):
+        suma = 0
+        for karta in reka:
+            if karta in "TJQKA":
+                suma += 10
             else:
-                total += int(card)
-        return total
-    
-    sum1 = calculate_points(player1)
-    sum2 = calculate_points(player2)
-    
-    return sum1 >= sum2
+                suma += int(karta)
+        return suma
 
-print(f("AJ972", "AQT72"))
-print(f("9532", "K8"))
-
-"""
-Gdy mamy do obliczenia dwa wyniki w jednej funkcji to opłaca się
-zdefiniować funkcję liczącą o dowolnej nazwie, aby użyć wartości
-wystarczy dodać wartości jak tu czyli zdefiniować atrybut sum1 i sum2
-i porównać je do napisanej funkcji
-
-"""
+    return policz_punkty(player1) >= policz_punkty(player2)

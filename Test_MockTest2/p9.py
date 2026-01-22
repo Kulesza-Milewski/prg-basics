@@ -1,23 +1,18 @@
 import csv
 
 def f(value):
-    count = 0
+    licznik = 0
     try:
-        with open("data.csv", "r", encoding="utf-8") as file:
-            reader = csv.reader(file)
-            next(reader, None) 
+        with open("data.csv", "r") as plik:
+            czytnik = csv.reader(plik)
+            next(czytnik)
             
-            for row in reader:
-                for item in row:
-                    try:
-                        salary = float(item)
-                        if salary >= value:
-                            count += 1
-                            break 
-                    except ValueError:
-                        continue
-        return count
+            for wiersz in czytnik:
+                if wiersz:
+                    napis_pensja = wiersz[-1]
+                    pensja = float(napis_pensja)
+                    if pensja >= value:
+                        licznik += 1
+        return licznik
     except FileNotFoundError:
         return 0
-
-print(f(9200))

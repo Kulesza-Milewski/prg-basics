@@ -1,12 +1,17 @@
-import re
-
 def f(array):
-    count = 0
-    pattern = r"^[a-z0-9_]{4,12}$"
+    poprawne_loginy = 0
     
-    for username in array:
-        if re.match(pattern, username):
-            count += 1
-    return count
-
-print(f(["uek","water_7_x","anna.may","a_b_c_d_e_f"]))
+    for login in array:
+        if len(login) < 4 or len(login) > 12:
+            continue
+            
+        jest_poprawny = True
+        for znak in login:
+            if not (znak.islower() or znak.isdigit() or znak == "_"):
+                jest_poprawny = False
+                break
+        
+        if jest_poprawny:
+            poprawne_loginy += 1
+            
+    return poprawne_loginy

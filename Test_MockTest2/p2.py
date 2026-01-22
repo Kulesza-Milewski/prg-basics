@@ -1,6 +1,4 @@
 def f(arr):
-    for num in arr:
-        if arr.count(num) == 1:
-            return num
-        
-print(f([7,7,7,7,7,5,7,7]))
+    for liczba in arr:
+        if arr.count(liczba) == 1:
+            return liczba

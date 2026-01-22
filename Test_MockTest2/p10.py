@@ -1,19 +1,16 @@
 def f(array):
-    min_val = float('inf')
-    min_row = -1
-    min_col = -1
+    min_wartosc = float('inf')
+    min_wiersz = -1
+    min_kolumna = -1
     
-    rows = len(array)
-    cols = len(array[0])
+    ilosc_wierszy = len(array)
+    ilosc_kolumn = len(array[0])
     
-    for r in range(rows):
-        for c in range(cols):
-            if array[r][c] < min_val:
-                min_val = array[r][c]
-                min_row = r
-                min_col = c
+    for w in range(ilosc_wierszy):
+        for k in range(ilosc_kolumn):
+            if array[w][k] < min_wartosc:
+                min_wartosc = array[w][k]
+                min_wiersz = w
+                min_kolumna = k
                 
-    return min_row == min_col
-
-print(f([[7,8],[5,3],[9,4]]))     
-print(f([[7,8,5,3],[9,4,2,6]]))    
+    return min_wiersz == min_kolumna

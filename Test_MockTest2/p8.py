@@ -1,23 +1,19 @@
 def f(expression):
-    stack = []
-    tokens = expression.split()
+    stos = []
+    elementy = expression.split()
     
-    for token in tokens:
-        if token.isdigit():
-            stack.append(int(token))
-        elif token in ['+', '-']:
-            b = stack.pop()
-            a = stack.pop()
+    for element in elementy:
+        if element.isdigit():
+            stos.append(int(element))
+        else:
+            liczba2 = stos.pop()
+            liczba1 = stos.pop()
             
-            if token == '+':
-                result = a + b
-            elif token == '-':
-                result = a - b
+            if element == "+":
+                wynik = liczba1 + liczba2
+            elif element == "-":
+                wynik = liczba1 - liczba2
             
-            stack.append(result)
+            stos.append(wynik)
             
-    return stack[0]
-
-print(f("2 3 +"))           
-print(f("2 6 + 4 5 - +"))   
-print(f("11 7 + 15 - 14 +"))
+    return stos[0]
